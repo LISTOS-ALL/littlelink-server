@@ -6,11 +6,12 @@ import { trackUmamiEvent } from '../../analytics/umami';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Button(props) {
-  const { name, href, displayName, logo, styles, alt, icon } = props;
+  const { name, href, displayName, logo, styles, alt, icon, onButthonClick } =
+    props;
 
   const handleClick = () => {
     const eventName = `${name}-button`;
-
+    onButthonClick();
     if (runtimeConfig?.GA_TRACKING_ID) {
       trackGoogleEvent(eventName);
     }
