@@ -1,4 +1,4 @@
-name: Littlelink-server-prod
+name: InstaPOP-prod
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: docker build
         run: |
-          docker build . -t $DOCKER_USER/littlelink-server:prod-$GITHUB_RUN_NUMBER
+          docker build . -t $DOCKER_USER/instapop:prod-$GITHUB_RUN_NUMBER
       - name: docker push
         run: |
-          docker push $DOCKER_USER/littlelink-server:prod-$GITHUB_RUN_NUMBER
+          docker push $DOCKER_USER/instapop:prod-$GITHUB_RUN_NUMBER
